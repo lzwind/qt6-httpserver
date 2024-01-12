@@ -1,5 +1,60 @@
-template-repository (1.0-1) unstable; urgency=medium
+qt6-httpserver (6.6.1-1) experimental; urgency=medium
 
-  * Initial release
+  [ Patrick Franz ]
+  * New upstream release (6.6.1).
+  * Bump Qt B-Ds to 6.6.1.
+  * Update list of installed files.
+  * Update symbols from buildlogs.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Dec 2023 21:50:41 +0100
+
+qt6-httpserver (6.4.2-4) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Upload to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 27 Jul 2023 20:14:04 +0200
+
+qt6-httpserver (6.4.2-3) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Add binary package for examples (Closes: #1042267).
+  * Add binary packages for documentation.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 27 Jul 2023 00:49:23 +0200
+
+qt6-httpserver (6.4.2-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Pass QT_HOST_PATH to cmake in cross-builds, thx to Helmut Grohne.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 22 Jun 2023 00:11:43 +0200
+
+qt6-httpserver (6.4.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Switch to the official 6.4.2 tarball, the tarball is the same.
+  * Bump Standards-Version to 4.6.2 (no changes needed).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 19 Jan 2023 12:22:00 +0100
+
+qt6-httpserver (6.4.2~rc1-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Upload to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 30 Dec 2022 16:58:19 +0100
+
+qt6-httpserver (6.4.2~rc1-1) experimental; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * New upstream release.
+    - Bump Qt build dependencies.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 27 Dec 2022 22:26:44 +0100
+
+qt6-httpserver (6.4.1-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #1021681)
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 24 Nov 2022 01:58:10 +0100

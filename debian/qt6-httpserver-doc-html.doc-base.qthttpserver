@@ -1,0 +1,9 @@
+Document: qt6-httpserver-manual
+Title: Qt 6 HTTP Server
+Author: The Qt Company Ltd
+Abstract: This is the HTML documentation for Qt 6 HTTP Server
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/qt6-httpserver-doc-html/html/qthttpserver/qthttpserver-index.html
+Files: /usr/share/doc/qt6-httpserver-doc-html/html/qthttpserver/*.html

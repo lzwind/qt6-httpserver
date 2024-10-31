@@ -48,5 +48,6 @@ navigation.landingpage = "Qt HTTP Server"
 
 manifestmeta.highlighted.names = "QtHttpServer/Simple HTTP Server"
 
-# Fail the documentation build if there are more warnings than the limit
+
+# Enforce zero documentation warnings in CI
 warninglimit = 0

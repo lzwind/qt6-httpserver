@@ -5,24 +5,28 @@ Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Patrick Franz <deltaone@debian.org>, Lu YaNing <dluyaning@gmail.com>,
 Build-Depends: cmake (>= 3.24~),
                debhelper-compat (= 13),
+               mold,
                ninja-build,
                pkg-config,
                pkg-kde-tools,
-               qt6-base-dev (>= 6.6.1+dfsg~),
-               qt6-base-private-dev (>= 6.6.1+dfsg~),
-               qt6-websockets-private-dev (>= 6.6.1~),
-Build-Depends-Indep: qt6-base-dev (>= 6.6~) <!nodoc>,
-                     qt6-documentation-tools (>= 6.6~) <!nodoc>,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-websockets-private-dev (>= 6.8.0~),
+Build-Depends-Indep: qt6-base-dev (>= 6.8~) <!nodoc>,
+                     qt6-documentation-tools (>= 6.8~) <!nodoc>,
+                     qt6-base-doc (>= 6.8~) <!nodoc>,
 Standards-Version: 4.6.2
 Homepage: https://www.qt.io/developers/
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/qt6-httpserver
 Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/qt6-httpserver.git
 Rules-Requires-Root: no
 
-Package: libqt6httpserver6
+Package: qt6-httpserver
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends}, ${shlibs:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Replaces: libqt6httpserver6,
 Description: Qt 6 HTTP Server library
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -33,30 +37,42 @@ Package: qt6-httpserver-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: libqt6httpserver6 (= ${binary:Version}), ${misc:Depends},
-Description: Qt 6 HTTP Server - development files
+Depends: qt6-base-dev,
+         qt6-httpserver (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Replaces: qt6-httpserver-examples,
+Description: Qt 6 HTTP Server library
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
  .
- This package contains the header development files for building some
- Qt 6 applications using Qt 6 HTTP Server headers.
+ This package contains Qt 6 HTTP Server library.
 
 Package: qt6-httpserver-doc
 Architecture: all
 Multi-Arch: foreign
 Section: doc
-Depends: qt6-base-doc, ${misc:Depends},
+Depends: qt6-base-doc,
+         qt6-httpserver-dev,
+         ${misc:Depends}
+Replaces: qt6-httpserver-doc-html,
 Description: Qt 6 HTTP Server documentation
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
  .
- This package contains the documentation for Qt 6 HTTP Server.
+ This package contains Qt 6 HTTP Server documentation.
+
+Package: libqt6httpserver6
+Architecture: all
+Depends: qt6-httpserver, ${misc:Depends}
+Description: Dummy transitional
+ Transitional dummy package.
 
 Package: qt6-httpserver-doc-html
 Architecture: all
 Multi-Arch: foreign
 Section: doc
-Depends: qt6-base-doc-html, ${misc:Depends},
+Depends: qt6-httpserver-doc, ${misc:Depends}
 Description: Qt 6 HTTP Server HTML documentation
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
@@ -67,7 +83,7 @@ Package: qt6-httpserver-examples
 Architecture: any
 Multi-Arch: same
 Section: misc
-Depends: ${misc:Depends}, ${shlibs:Depends},
+Depends: qt6-httpserver-dev, ${misc:Depends}
 Description: Qt 6 HTTP Server examples
  Qt is a cross-platform C++ application framework. Qt's primary feature
  is its rich set of widgets that provide standard GUI functionality.
